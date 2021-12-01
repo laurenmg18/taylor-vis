@@ -1,0 +1,333 @@
+@font-face {
+    font-family: debut;
+    src: url(fonts/Satisfaction.ttf);
+}
+
+@font-face {
+    font-family: fearless;
+    src: url(fonts/fearless.ttf);
+}
+
+@font-face {
+    font-family: speak now;
+    src: url(fonts/speaknow.ttf);
+}
+
+@font-face {
+    font-family: redfont;
+    src: url(fonts/red.ttf);
+}
+
+@font-face {
+    font-family: nineteen;
+    src: url(fonts/nineteen.ttf);
+}
+
+@font-face {
+    font-family: reputation;
+    src: url(fonts/reputation.otf);
+}
+
+@font-face {
+    font-family: lover;
+    src: url(fonts/lover.ttf);
+}
+
+@font-face {
+    font-family: folklore;
+    src: url(fonts/folkloreevermore.ttf);
+}
+
+body{
+    background-color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia;
+}
+
+li{
+    display: inline;
+    float: left;
+}
+
+li a{
+    display: block;
+    padding: 14px 16px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+a:link:visited.debut{
+    color:#00a3ad
+}
+
+a:link:visited.fearless{
+    color:#694d30
+}
+
+a:link:visited.speaknow{
+    color:white
+}
+
+a:link:visited.red{
+    color:#992A30
+}
+
+a:link:visited.nineteen{
+    color:#2e2e2e
+}
+
+a:link:visited.rep{
+    color:black
+}
+
+a:link:visited.lover{
+    color:#AA4876;
+}
+
+a:link:visited.folklore{
+    color:#444444
+}
+
+a:link:visited.evermore{
+    color:#67230e
+}
+
+
+div{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    width: 90px;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-style: none; 
+}
+
+img.landing{
+    width: 170px;
+    height: 170px;
+}
+
+img.large{
+    width: 300px;
+    height: 300px;
+}
+
+h1{
+    font-size: 80px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 60px;
+}
+
+h1.debut{
+    font-size: 95px;
+}
+
+h1.fearless{
+    font-size: 120px;
+}
+
+h1.speaknow{
+    font-size: 125px;
+}
+
+h1.red{
+    font-size: 130px;
+}
+
+h1.nineteen{
+    font-size: 130px;
+}
+
+h1.reputation{
+    font-size: 115px;
+}
+
+h1.lover{
+    font-size: 150px;
+}
+
+h1.folklore{
+    font-size: 120px;
+}
+
+h1.evermore{
+    font-size:120px;
+}
+
+h2{
+    font-size: 35px;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 50 px;
+}
+
+.debut{
+    background-color: #97e9c1;
+    color: #00a3ad;
+    font-family: debut;
+}
+
+.fearless{
+    background-color: #d9c78f;
+    color: #694d30;
+    font-family: fearless;
+}
+
+.speaknow{
+    background-color: #813c60;
+    color: white;
+    font-family: speak now;
+}
+
+.red{
+    background-color: #D3B7A2;
+    color: #992A30;
+    font-family: redfont;
+}
+
+.nineteen{
+    background-color: #cdc6ac;
+    color: #2e2e2e;
+    font-family: nineteen;
+}
+
+.rep{
+    background-color: #676767;
+    color: black;
+    font-family: reputation;
+}
+
+.lover{
+    background-color: #FEB7C5;
+    color: #AA4876;
+    font-family: lover;
+}
+
+.evermore{
+    background-color: #7e5c43;
+    color: #67230e;
+    font-family: folklore;
+}
+
+.folklore{
+    background-color: #bababa;
+    color: #444444;
+    font-family: folklore;
+}
+
+div.topcoat-button-bar {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  :focus {
+    outline-color: transparent;
+    outline-style: none;
+  }
+  
+  .full {
+    width: 100%;
+  }
+  
+  .topcoat-button-bar__item > input {
+    border: 0;
+      clip: rect(0 0 0 0);
+      height: 2rem;
+      margin: 0 -2rem -2rem 0;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: auto;
+  }
+  
+  .button-bar,
+  .topcoat-button-bar {
+    display: table;
+    table-layout: fixed;
+    white-space: no-wrap;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .topcoat-button-bar__item {
+    display: table-cell;
+    width: 170px;
+    border-radius: 0;
+  }
+  
+  .topcoat-button-bar > .topcoat-button-bar__item:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  
+  .topcoat-button-bar > .topcoat-button-bar__item:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  
+  .topcoat-button-bar__item:first-child > .topcoat-button-bar__button {
+    border-right: none;
+  }
+  
+  .topcoat-button-bar__item:last-child > .topcoat-button-bar__button {
+    border-left: none;
+  }
+  
+  .button,
+  .topcoat-button-bar__button {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    background-clip: padding-box;
+    color: inherit;
+    vertical-align: top;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font: inherit;
+    cursor: default;
+    user-select: none;
+  }
+  
+  .topcoat-button-bar__button {
+    font-size: 18px;
+    padding: 60px 30px;
+    border: 1px solid #a5a8a8;
+    /* Important inheritance to manipulate border radius from parent */
+    border-radius: inherit;
+    background-color: #252424;
+    -webkit-box-shadow: inset 0 1px #fff;
+    box-shadow: inset 0 1px #fff;
+    color: #F9F9F9;
+    text-shadow: 0 0.5px #B2B2B2;
+    line-height: 3rem;
+  }
+  
+  .topcoat-button-bar__button:focus {
+    border: 1px solid #a5a8a8;
+    -webkit-box-shadow: 0 0 0 2px #fff;
+    box-shadow: 0 0 0 2px #fff;
+    z-index: 1;
+  }
+  
