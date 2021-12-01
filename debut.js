@@ -9,13 +9,13 @@ const debut = [
       "valence": 0.425,
     },
     {
-      "track": 2,
-      "name": "Picture To Burn",
-      "album": "Taylor Swift",
-      "duration": 173066,
-      "popularity": 54,
-      "danceability": 0.658,
-      "valence": 0.821,
+        "track": 2,
+        "name": "Picture To Burn",
+        "album": "Taylor Swift",
+        "duration": 173066,
+        "popularity": 54,
+        "danceability": 0.658,
+        "valence": 0.821,
     },
     {
       "track": 3,
@@ -140,97 +140,143 @@ const debut = [
 
 const body = d3.select("body");
 
+
 let div = body.append("div")
 
 const svg = div.append("svg")
-    .attr("height", "700")
-    .attr("width", "1500")
+    .attr("height", "500")
+    .attr("width", "1000")
     .style("border", "none");
 
 const bigCirc = svg.append("circle")
-    .attr("cx", "750")
-    .attr("cy", "700")
-    .attr("r", "700")
+    .attr("cx", "500")
+    .attr("cy", "500")
+    .attr("r", "500")
     .attr("fill", "black")
 
 const label = svg.append("circle")
-    .attr("cx", "750")
-    .attr("cy", "700")
-    .attr("r", "250")
+    .attr("cx", "500")
+    .attr("cy", "500")
+    .attr("r", "175")
     .attr("fill", "#c6e597")
 
 const littleCirc = svg.append("circle")
-    .attr("cx", "750")
-    .attr("cy", "700")
-    .attr("r", "115")
+    .attr("cx", "500")
+    .attr("cy", "500")
+    .attr("r", "80")
     .attr("fill", "black")
 
 const hole = svg.append("circle")
-    .attr("cx", "750")
-    .attr("cy", "700")
-    .attr("r", "75")
+    .attr("cx", "500")
+    .attr("cy", "500")
+    .attr("r", "45")
     .attr("fill", "#97e9c1")
 
-/*
-    let draw = (dataset) => {
-   
 
-        let length = svg.selectAll('.length')
-                        .data(dataset) 
-                        .join('circle')
-                        .classed('length', true)
-                        .attr('cy', 700)
-                        .attr('cx', 750)
-                        .attr('r', (d) => 250 + 29*d.track)
-                        .style('fill','none')
-                        .style('stroke','#737373')
-                        .style('stroke-width', "5")
-    }
-draw(debut)
-*/
-
-for (i = 0; i < debut.length; i++) {
+const draw1 = (dataset) => {
+for (var j = dataset.length-1; j>=0; j--) {
     var arc = d3.arc()
-            .outerRadius(250 + 29*debut[i].track)
-            .innerRadius((250+29*debut[i].track)-3)
+            .outerRadius(175 + 21*dataset[j].track)
+            .innerRadius((175+21*dataset[j].track)-3)
             // Use of arc.startAngle() Function 
             .startAngle(-1.75)
-            .endAngle(-1+0.00001*debut[i].duration);
+            .endAngle(-2+0.00001*dataset[j].duration);
         svg.append("path")
             .attr("class", "arc")
             .attr("d", arc)
-            .attr("transform","translate(750,700)");
+            .attr("transform","translate(500,500)")
+            .style("fill","#737373")
 
-        let p = document.querySelector(".arc");
-        p.style.fill = "#737373";
+}
 }
 
-
-/*
-var arc = d3.arc()
-.outerRadius(400)
-.innerRadius(397)
-// Use of arc.startAngle() Function 
-.startAngle(-1.75)
-.endAngle(0);
-
-svg.append('path')
-    .attr('class',arc)
-    .attr('d',arc)
-    .atrr('transform','translate(750,700)');
-
-/*
-let draw = (dataset) => {
-    let length = svg.selectAll('.length')
-                    .data(dataset) 
-                    .join('path')
-                    .classed('length', true)
-                    .attr('class', arc)
-                    .attr('d', arc)
-                    .attr("transform","translate(750,700)");
-    let p = document.querySelector(".arc");
-    p.style.fill = "#737373";
+const draw2 = (dataset) => {
+    for (var j = dataset.length-1; j>=0; j--) {
+        var arc = d3.arc()
+                .outerRadius(175 + 21*dataset[j].track)
+                .innerRadius((175+21*dataset[j].track)-3)
+                // Use of arc.startAngle() Function 
+                .startAngle(-1.75)
+                .endAngle(-2+0.05*dataset[j].popularity);
+            svg.append("path")
+                .attr("class", "arc")
+                .attr("d", arc)
+                .attr("transform","translate(500,500)")
+                .style("fill","#737373")
+    }
 }
 
-draw(debut)
-*/
+const draw3 = (dataset) => {
+    for (var j = dataset.length-1; j>=0; j--) {
+        var arc = d3.arc()
+                .outerRadius(175 + 21*dataset[j].track)
+                .innerRadius((175+21*dataset[j].track)-3)
+                // Use of arc.startAngle() Function 
+                .startAngle(-1.75)
+                .endAngle(-2+4.25*dataset[j].danceability);
+            svg.append("path")
+                .attr("class", "arc")
+                .attr("d", arc)
+                .attr("transform","translate(500,500)")
+                .style("fill","#737373")
+    }
+}
+
+const draw4 = (dataset) => {
+    for (var j = dataset.length-1; j>=0; j--) {
+        var arc = d3.arc()
+                .outerRadius(175 + 21*dataset[j].track)
+                .innerRadius((175+21*dataset[j].track)-3)
+                // Use of arc.startAngle() Function 
+                .startAngle(-1.75)
+                .endAngle(-2+4*dataset[j].valence);
+            svg.append("path")
+                .attr("class", "arc")
+                .attr("d", arc)
+                .attr("transform","translate(500,500)")
+                .style("fill","#737373")
+    }
+}
+
+let buttonDiv = body.append('div')
+                    .attr("class","topcoat-button-bar full")
+
+let button1 = buttonDiv.append('div')
+                        .attr("class","topcoat-button-bar__item")
+                        .attr('id', 'button1')
+let duration = button1.append('button')
+                        .attr("class","topcoat-button-bar__button full")
+                        .text("Length")
+                        .attr('id', 'duration')
+
+let button2 = buttonDiv.append('div')
+                        .attr("class","topcoat-button-bar__item")
+                        .attr('id', 'button2')
+let popularity = button2.append('button')
+                        .attr("class", "topcoat-button-bar__button full")
+                        .text('Popularity')
+                        .attr('id', 'popularity')
+
+let button3 = buttonDiv.append('div')
+                        .attr("class","topcoat-button-bar__item")
+                        .attr('id', 'button3')
+let danceability = button3.append('button')
+                            .attr("class", "topcoat-button-bar__button full")
+                            .text('Danceability')
+                            .attr('id', 'danceability')
+
+let button4 = buttonDiv.append('div')
+                        .attr("class","topcoat-button-bar__item")
+                        .attr('id', 'button4')
+let happiness = button4.append('button')
+                        .attr("class", "topcoat-button-bar__button full")
+                        .text('Happiness')
+                        .attr('id', 'happiness')
+
+duration.on('click', () => draw1(debut))
+popularity.on('click', () => draw2(debut))
+danceability.on('click', () => draw3(debut))
+happiness.on('click', () => draw4(debut))
+
+
+
